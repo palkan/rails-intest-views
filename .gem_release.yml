@@ -1,0 +1,4 @@
+bump:
+  file: lib/rails/intest/views/version.rb
+  skip_ci: true
+
