@@ -80,6 +80,28 @@ ERB
 visit_template source, layout: "custom"
 ```
 
+View components are supported through the `#render_component` helper:
+
+```ruby
+button = ButtonComponent.new(type: :submit) do
+  "Save me!"
+end
+
+render_component button
+```
+
+View component-based layouts are supported as well:
+
+```ruby
+button = ButtonComponent.new(type: :submit) do
+  "Save me!"
+end
+
+render_component button, layout: PreviewLayout
+# or
+render_component button, layout: -> { PreviewLayout }
+```
+
 ### Configuration
 
 The following configuration parameters are available (the default values are shown):
