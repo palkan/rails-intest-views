@@ -55,6 +55,11 @@ module RailsIntestViews
     def url_for(id)
       File.join(config.mount_path, id)
     end
+
+    def render_component(component)
+      controller = config.templates_controller.constantize
+      controller.renderer.render_to_string(component)
+    end
   end
 
   autoload :RequestHelpers, "rails-intest-views/request_helpers"

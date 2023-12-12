@@ -6,5 +6,10 @@ module RailsIntestViews
       id = RailsIntestViews.write(source, **options)
       visit RailsIntestViews.url_for(id)
     end
+
+    def visit_component(component, **options)
+      source = RailsIntestViews.render_component(component)
+      visit_template(source, **options)
+    end
   end
 end
